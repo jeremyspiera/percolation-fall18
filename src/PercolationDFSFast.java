@@ -6,7 +6,7 @@ public class PercolationDFSFast extends PercolationDFS {
 	
 	@Override
 	protected void updateOnOpen(int row, int col) {
-		if (row == 0) dfs(row,col);
+		if (row == 0) myGrid[row][col] = FULL;
 		if (inBounds(row-1,col) && isOpen(row-1,col) && isFull(row-1,col)) dfs(row,col);
 		if (inBounds(row+1,col) && isOpen(row+1,col) && isFull(row+1,col)) dfs(row,col);
 		if (inBounds(row,col-1) && isOpen(row,col-1) && isFull(row,col-1)) dfs(row,col);
