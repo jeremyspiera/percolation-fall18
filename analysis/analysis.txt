@@ -1,22 +1,51 @@
-Your name
-Your netid
+Jeremy Spiera
+jds161
 
 Copy/Paste results from PercolationStats using PercolationDFS
-
+Piazza said not to. 
 
 Copy/Paste results from PercolationStats using PercolationDFSFast
-
+simulation data for 20 trials
+grid	mean	stddev	time
+100		0.593	0.014	0.096
+200		0.591	0.010	0.104
+400		0.590	0.006	0.728
+800		0.594	0.004	4.340
+StackOverflowError
 
 Copy/Paste results from PercolationStats using PercolationBFS
+simulation data for 20 trials
+grid	mean	stddev	time
+100		0.593	0.014	0.188
+200		0.591	0.010	0.272
+400		0.590	0.006	1.324
+800		0.594	0.004	8.549
+1600	0.592	0.002	50.466
+3200	0.593	0.001	158.379
+
 
 
 Copy/Paste results from PercolationStats using PercolationUF 
 with the QuickUWPC UnionFind implementation.
+simulation data for 20 trials
+grid	mean	stddev	time
+100		0.593	0.014	0.089
+200		0.591	0.010	0.122
+400		0.590	0.006	0.577
+800		0.594	0.004	2.917
+1600	0.592	0.002	16.262
+3200	0.593	0.001	128.763
 
 1. How does doubling the grid size affect running time (keeping # trials fixed)
-
+Doubling the grid size seems to have an O(N^2) complexity, as the runtimes are getting much larger
+than double when grid size doubles and is comparable to that of squaring the previous runtime.
 
 2. How does doubling the number of trials affect running time.
-
+Doubling the number of trials seems to have around a linear effect on runtime, leading me to believe
+the number of trials is O(N) complexity
 
 3. Estimate the largest grid size you can run in 24 hours with 20 trials. Explain your reasoning.
+24 hours = 86,400 seconds. Assuming an O(N^2) complexity, doubling from 3200 to 6400 will turn runtimes from 
+around 130 to 130^2 = 16900 seconds. Squaring that again (doubling grid to 12800)
+will bring runtime to 16900^2 which is 285,600, which is way too big. Therefore, the answer should be 
+somewhere between 6400 and 12800, closer to 6400. A good estimate would be a grid of somewhere around 8000.
